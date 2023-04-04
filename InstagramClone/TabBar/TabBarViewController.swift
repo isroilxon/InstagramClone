@@ -33,12 +33,8 @@ class TabBarViewController: UITabBarController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
-        title = "tabbar"
 
-
-        
         UITabBar.appearance().tintColor = UIColor.black
-                
         tabHome.tabBarItem = UITabBarItem(title: "", image: imgHome1, selectedImage: imgHome2)
         tabSearch.tabBarItem = UITabBarItem(title: "", image: imgCat1, selectedImage: imgCat2)
         tabAdd.tabBarItem = UITabBarItem(title: "", image: imgMess1, selectedImage: imgMess2)
@@ -47,7 +43,7 @@ class TabBarViewController: UITabBarController {
         
         let viewControllerList = [tabHome, tabSearch,tabReels,tabAdd,tabProfil]
         viewControllers = viewControllerList.map {
-            UINavigationController(rootViewController: $0)
+            $0
         }
         tabBarController?.tabBar.delegate = self
 

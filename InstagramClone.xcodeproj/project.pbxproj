@@ -19,6 +19,7 @@
 		04D6513629D8BAF0005BA4F0 /* ReelsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D6513529D8BAF0005BA4F0 /* ReelsViewController.swift */; };
 		04D6513829D8BB0A005BA4F0 /* ProfilViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D6513729D8BB0A005BA4F0 /* ProfilViewController.swift */; };
 		04E3066329DAF904009036B8 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 04E3066229DAF904009036B8 /* GoogleService-Info.plist */; };
+		04E3066629DC4713009036B8 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E3066529DC4713009036B8 /* SignUpViewController.swift */; };
 		04EB1A9929D9997300B208DA /* HomeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04EB1A9829D9997300B208DA /* HomeTableViewCell.swift */; };
 		04EB1A9D29D99C9900B208DA /* model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04EB1A9C29D99C9900B208DA /* model.swift */; };
 		04EB1A9F29D99D7200B208DA /* MessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04EB1A9E29D99D7200B208DA /* MessageViewController.swift */; };
@@ -41,6 +42,7 @@
 		04D6513529D8BAF0005BA4F0 /* ReelsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReelsViewController.swift; sourceTree = "<group>"; };
 		04D6513729D8BB0A005BA4F0 /* ProfilViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilViewController.swift; sourceTree = "<group>"; };
 		04E3066229DAF904009036B8 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		04E3066529DC4713009036B8 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		04EB1A9829D9997300B208DA /* HomeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTableViewCell.swift; sourceTree = "<group>"; };
 		04EB1A9C29D99C9900B208DA /* model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = model.swift; sourceTree = "<group>"; };
 		04EB1A9E29D99D7200B208DA /* MessageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageViewController.swift; sourceTree = "<group>"; };
@@ -85,9 +87,9 @@
 		04D6511129D85AC1005BA4F0 /* InstagramClone */ = {
 			isa = PBXGroup;
 			children = (
+				04E3066429DC46B0009036B8 /* Register */,
 				04D6512E29D8BA68005BA4F0 /* TabBar */,
 				04D6512B29D8B6EE005BA4F0 /* Utilities */,
-				04D6512929D85B4A005BA4F0 /* RegsterViewController.swift */,
 				04D6512029D85AC3005BA4F0 /* Info.plist */,
 				04E3066229DAF904009036B8 /* GoogleService-Info.plist */,
 			);
@@ -115,6 +117,15 @@
 				04D6513529D8BAF0005BA4F0 /* ReelsViewController.swift */,
 			);
 			path = TabBar;
+			sourceTree = "<group>";
+		};
+		04E3066429DC46B0009036B8 /* Register */ = {
+			isa = PBXGroup;
+			children = (
+				04D6512929D85B4A005BA4F0 /* RegsterViewController.swift */,
+				04E3066529DC4713009036B8 /* SignUpViewController.swift */,
+			);
+			path = Register;
 			sourceTree = "<group>";
 		};
 		04EB1A9729D9991800B208DA /* Home */ = {
@@ -280,6 +291,7 @@
 				04EB1AA129D99D8500B208DA /* SendViewController.swift in Sources */,
 				04EB1A9929D9997300B208DA /* HomeTableViewCell.swift in Sources */,
 				04D6511329D85AC1005BA4F0 /* AppDelegate.swift in Sources */,
+				04E3066629DC4713009036B8 /* SignUpViewController.swift in Sources */,
 				04D6513029D8BA88005BA4F0 /* HomeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

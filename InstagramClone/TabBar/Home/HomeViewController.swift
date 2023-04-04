@@ -17,7 +17,9 @@ class HomeViewController: UIViewController {
         Instagram(locate: "Lagos, Nigeria", avatar: "person2", post: "https://c4.wallpaperflare.com/wallpaper/297/22/531/lake-blue-moonlight-moon-wallpaper-preview.jpg", likes: "Liked: 78986", comment: "Here are some good comments for Instagram pictures you can use the next time you see something nice on the platform.", like: true, save: false),
         Instagram(locate: "Sindhudurga", avatar: "person3", post: "https://cdn.wallpapersafari.com/79/73/TvuM20.jpg", likes: "Liked: 87879", comment: "You will find some of the best comments for Instagram posts in the below list.", like: false, save: false)]
 
-
+    override func viewWillAppear(_ animated: Bool) {
+        navigationController?.navigationBar.isHidden = true
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         

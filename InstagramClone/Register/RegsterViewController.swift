@@ -22,12 +22,16 @@ class RegsterViewController: UIViewController, UITextFieldDelegate {
     let forgetBut = UILabel()
     let logIn = UIButton()
     let dontHave = UILabel()
-    let singUpBut = UILabel()
+    let sinUpLabel = UILabel()
+    let sinUpBut = UIButton()
     let byFace = UIImageView()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
+        sinUpBut.addTarget(self, action: #selector(signTap), for: .touchUpInside)
+        let tap = UITapGestureRecognizer(target: self, action: #selector(signTap))
+        sinUpLabel.addGestureRecognizer(tap)
         view.addSubview(logo)
         logo.snp.makeConstraints { make in
             make.top.equalTo(view.safeAreaLayoutGuide).offset(65)
@@ -155,14 +159,20 @@ class RegsterViewController: UIViewController, UITextFieldDelegate {
         dontHave.font = .systemFont(ofSize: 15)
         dontHave.textColor = UIColor(red: 174/255, green: 169/255, blue: 169/255, alpha: 1)
         
-        view.addSubview(singUpBut)
-        singUpBut.snp.makeConstraints { make in
+        view.addSubview(sinUpBut)
+        sinUpBut.snp.makeConstraints { make in
             make.left.equalTo(dontHave.snp_rightMargin).offset(10)
-            make.top.equalTo(view.safeAreaLayoutGuide).offset(581)
+            make.centerY.equalTo(dontHave.snp_centerYWithinMargins)
         }
-        singUpBut.text = "sign up"
-        singUpBut.textColor = UIColor(red: 38/255, green: 127/255, blue: 243/255, alpha: 1)
-        singUpBut.font = .systemFont(ofSize: 15)
+        
+        sinUpBut.addSubview(sinUpLabel)
+        sinUpLabel.snp.makeConstraints { make in
+            make.top.right.left.bottom.equalToSuperview()
+        }
+        sinUpLabel.text = "sign up"
+        sinUpLabel.textColor = UIColor(red: 38/255, green: 127/255, blue: 243/255, alpha: 1)
+        sinUpLabel.font = .systemFont(ofSize: 15)
+        
         
         view.addSubview(byFace)
         byFace.snp.makeConstraints { make in
@@ -194,6 +204,12 @@ class RegsterViewController: UIViewController, UITextFieldDelegate {
         eyeTap.setImage(UIImage(systemName: "eye"), for: .normal)
     }
     
+    @objc func signTap(){
+        print("SignUp")
+        let vc = SignUpViewController()
+        navigationController?.pushViewController(vc, animated: true)
+    }
+    
     @objc func checkPass(){
         print("login")
         if let emailText = email.text,
@@ -202,6 +218,9 @@ class RegsterViewController: UIViewController, UITextFieldDelegate {
            !parolText.isEmpty {
             Auth.auth().signIn(withEmail: emailText, password: parolText) { [self] result, error in
                 if let error = error{
+                    let alert = UIAlertController(title: "Error", message: error.localizedDescription, preferredStyle: .alert)
+                    alert.addAction(UIAlertAction(title: "ok", style: .default))
+                    self.present(alert, animated: true)
                     print("failed")
                     print(error.localizedDescription)
                     self.paswordView.layer.borderColor = UIColor.red.cgColor
@@ -213,27 +232,14 @@ class RegsterViewController: UIViewController, UITextFieldDelegate {
                 }
                 else{
                     print("succes")
-                    let vc = TabBarViewController()
-                    self.navigationController?.pushViewController(vc, animated: true)
+                    UserDefaults.standard.set(true, forKey: "register")
+                    (UIApplication.shared.delegate as? AppDelegate)?.main()
                 }
             }
         }
         else{
             print("Fieldlar bo'sh")
         }
-        //        if password.text == "1" && email.text == "11"{
-        //            let vc = TabBarViewController()
-        //            navigationController?.pushViewController(vc, animated: true)
-        //        }
-        //        else {
-        //            paswordView.layer.borderColor = UIColor.red.cgColor
-        //            email.layer.borderColor = UIColor.red.cgColor
-        //            DispatchQueue.main.asyncAfter(deadline: .now()+0.5){
-        //                self.paswordView.layer.borderColor = UIColor.systemGray3.cgColor
-        //                self.email.layer.borderColor = UIColor.systemGray3.cgColor
-        //
-        //            }
-        //        }
     }
     
     
