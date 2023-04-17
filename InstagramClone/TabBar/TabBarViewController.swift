@@ -25,10 +25,10 @@ class TabBarViewController: UITabBarController {
     let imgShop2 = UIImage(systemName: "video.fill")
     let imgAcc1 = UIImage(systemName: "person.circle")
     let imgAcc2 = UIImage(systemName: "person.circle.fill")
-    override func viewWillAppear(_ animated: Bool) {
-        navigationController?.navigationBar.isHidden = true
-
-    }
+//    override func viewWillAppear(_ animated: Bool) {
+//        navigationController?.navigationBar.isHidden = true
+//
+//    }
 
     override func viewDidLoad() {
         super.viewDidLoad()

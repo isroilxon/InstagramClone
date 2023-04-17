@@ -12,6 +12,7 @@ class HomeTableViewCell: UITableViewCell {
     let nick = UILabel()
     let locate = UILabel()
     let post = UIImageView()
+    let spots = UIButton()
     let like = UIButton()
     let write = UIButton()
     let send = UIButton()
@@ -36,6 +37,16 @@ class HomeTableViewCell: UITableViewCell {
         avatar.clipsToBounds = true
         avatar.layer.cornerRadius = 25
         
+        contentView.addSubview(spots)
+        spots.snp.makeConstraints { make in
+            make.right.equalToSuperview().offset(-15)
+            make.centerY.equalTo(avatar.snp_centerYWithinMargins)
+            make.height.equalTo(5)
+            make.width.equalTo(15)
+        }
+        spots.setImage(UIImage(systemName: "circle.grid.2x1.fill"), for: .normal)
+        spots.setTitleColor(.black, for: .normal)
+        
         nick.translatesAutoresizingMaskIntoConstraints = false
         contentView.addSubview(nick)
         nick.text = "Apple"
@@ -54,44 +65,43 @@ class HomeTableViewCell: UITableViewCell {
         
         post.translatesAutoresizingMaskIntoConstraints = false
         contentView.addSubview(post)
-        post.heightAnchor.constraint(equalToConstant: 300).isActive = true
+        post.heightAnchor.constraint(equalToConstant: 375).isActive = true
         post.topAnchor.constraint(equalTo: locate.bottomAnchor, constant: 20).isActive = true
-        post.leftAnchor.constraint(equalTo: contentView.leftAnchor, constant: 10).isActive = true
-        post.rightAnchor.constraint(equalTo: contentView.rightAnchor, constant: -10).isActive = true
-        
-        like.translatesAutoresizingMaskIntoConstraints = false
+        post.leftAnchor.constraint(equalTo: contentView.leftAnchor).isActive = true
+        post.rightAnchor.constraint(equalTo: contentView.rightAnchor).isActive = true
+
         contentView.addSubview(like)
-        like.topAnchor.constraint(equalTo: post.bottomAnchor, constant: 10).isActive = true
-        like.leftAnchor.constraint(equalTo: contentView.leftAnchor, constant: 10).isActive = true
-        like.widthAnchor.constraint(equalToConstant: 45).isActive = true
-        like.heightAnchor.constraint(equalToConstant: 45).isActive = true
+        like.snp.makeConstraints { make in
+            make.top.equalTo(post.snp_bottomMargin).offset(30)
+            make.left.equalToSuperview().offset(15)
+            make.height.width.equalTo(22)
+        }
         like.setImage(UIImage(systemName: "heart"), for: .normal)
         like.tintColor = .black
         
-        write.translatesAutoresizingMaskIntoConstraints = false
         contentView.addSubview(write)
-        write.topAnchor.constraint(equalTo: post.bottomAnchor, constant: 10).isActive = true
-        write.leftAnchor.constraint(equalTo: like.rightAnchor, constant: 10).isActive = true
-        write.widthAnchor.constraint(equalToConstant: 45).isActive = true
-        write.heightAnchor.constraint(equalToConstant: 45).isActive = true
+        write.snp.makeConstraints { make in
+            make.top.equalTo(post.snp_bottomMargin).offset(30)
+            make.left.equalTo(like.snp_rightMargin).offset(15)
+            make.height.width.equalTo(25)        }
         write.setImage(UIImage(systemName: "message"), for: .normal)
         write.tintColor = .black
         
-        send.translatesAutoresizingMaskIntoConstraints = false
         contentView.addSubview(send)
-        send.topAnchor.constraint(equalTo: post.bottomAnchor, constant: 10).isActive = true
-        send.leftAnchor.constraint(equalTo: write.rightAnchor, constant: 10).isActive = true
-        send.widthAnchor.constraint(equalToConstant: 45).isActive = true
-        send.heightAnchor.constraint(equalToConstant: 45).isActive = true
+        send.snp.makeConstraints { make in
+            make.top.equalTo(post.snp_bottomMargin).offset(30)
+            make.left.equalTo(write.snp_rightMargin).offset(15)
+            make.height.width.equalTo(25)
+        }
         send.setImage(UIImage(systemName: "location"), for: .normal)
         send.tintColor = .black
         
-        save.translatesAutoresizingMaskIntoConstraints = false
         contentView.addSubview(save)
-        save.topAnchor.constraint(equalTo: post.bottomAnchor, constant: 10).isActive = true
-        save.rightAnchor.constraint(equalTo: contentView.rightAnchor, constant: -10).isActive = true
-        save.widthAnchor.constraint(equalToConstant: 45).isActive = true
-        save.heightAnchor.constraint(equalToConstant: 45).isActive = true
+        save.snp.makeConstraints { make in
+            make.top.equalTo(post.snp_bottomMargin).offset(30)
+            make.right.equalToSuperview().offset(-30)
+            make.height.width.equalTo(25)
+        }
         save.setImage(UIImage(systemName: "bookmark"), for: .normal)
         save.tintColor = .black
         
@@ -101,7 +111,7 @@ class HomeTableViewCell: UITableViewCell {
         likes.leftAnchor.constraint(equalTo: contentView.leftAnchor, constant: 10).isActive = true
         likes.rightAnchor.constraint(equalTo: contentView.rightAnchor, constant: -10).isActive = true
         likes.numberOfLines = 0
-        likes.font = .systemFont(ofSize: 20)
+        likes.font = .systemFont(ofSize: 14)
         
         comment.translatesAutoresizingMaskIntoConstraints = false
         contentView.addSubview(comment)
@@ -110,7 +120,7 @@ class HomeTableViewCell: UITableViewCell {
         comment.rightAnchor.constraint(equalTo: contentView.rightAnchor, constant: -10).isActive = true
         comment.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -10).isActive = true
         comment.numberOfLines = 0
-        comment.font = .systemFont(ofSize: 20)
+        comment.font = .systemFont(ofSize: 14)
         
     }
     

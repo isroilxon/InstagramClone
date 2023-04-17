@@ -25,7 +25,7 @@ class HomeViewController: UIViewController {
         
         view.addSubview(instagram)
         instagram.snp.makeConstraints { make in
-            make.top.equalTo(view.safeAreaLayoutGuide).offset(65)
+            make.top.equalTo(view.safeAreaLayoutGuide).offset(10)
             make.left.equalToSuperview().offset(21)
             make.height.equalTo(35)
             make.width.equalTo(123)
@@ -34,7 +34,7 @@ class HomeViewController: UIViewController {
         
         view.addSubview(topMess)
         topMess.snp.makeConstraints { make in
-            make.top.equalTo(view.safeAreaLayoutGuide).offset(65)
+            make.top.equalTo(view.safeAreaLayoutGuide).offset(10)
             make.right.equalToSuperview().offset(-20)
             make.height.width.equalTo(25)
         }
@@ -43,7 +43,7 @@ class HomeViewController: UIViewController {
         
         view.addSubview(topHeart)
         topHeart.snp.makeConstraints { make in
-            make.top.equalTo(view.safeAreaLayoutGuide).offset(65)
+            make.top.equalTo(view.safeAreaLayoutGuide).offset(10)
             make.right.equalTo(topMess.snp_leftMargin).offset(-20)
             make.height.width.equalTo(25)
         }

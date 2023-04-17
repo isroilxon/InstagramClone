@@ -6,24 +6,35 @@
 //
 
 import UIKit
+import FirebaseAuth
 
 class ProfilViewController: UIViewController {
-
+    let logIn = UIButton()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
+        view.addSubview(logIn)
+        logIn.snp.makeConstraints { make in
+            make.top.equalTo(view.safeAreaLayoutGuide).offset(516)
+            make.left.equalToSuperview().offset(42)
+            make.right.equalToSuperview().offset(-42)
+            make.height.equalTo(36)
+        }
+        logIn.clipsToBounds = true
+        logIn.layer.cornerRadius = 10
+        logIn.setTitle("Log In", for: .normal)
+        logIn.setTitleColor(.red, for: .normal)
+        logIn.addTarget(self, action: #selector(checkPass), for: .touchUpInside)
+        
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    @objc func checkPass(){
+        print("sdv")
+        //        Storage.storage().reference(forURL: "gs://myapp.appspot.com").child("avatar").child(userId).delete()
+        //            }
+        
+        
     }
-    */
-
+    
 }
