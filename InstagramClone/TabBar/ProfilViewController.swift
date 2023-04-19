@@ -1,9 +1,3 @@
-//
-//  ProfilViewController.swift
-//  InstagramClone
-//
-//  Created by mac on 02/04/23.
-//
 
 import UIKit
 import FirebaseAuth
